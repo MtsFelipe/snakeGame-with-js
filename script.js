@@ -33,7 +33,7 @@ function principal(){
             py = 0;
         }
  
-        ctx.fillStyle = "black"; //fundo do mapa 
+        ctx.fillStyle = "#252525"; //fundo do mapa 
         ctx.fillRect(0,0, stage.width,stage.height);
         
         ctx.fillStyle = "red";//maça
@@ -45,7 +45,7 @@ function principal(){
              if (trail[i].x == px && trail[i].y == py)
             {
                 if (vx!=0) {
-                    alert("Game Over!!!!!")
+                    alert("Game Over !!!!!")
                 }
                 vx = vy=0;
                 tail =5;
@@ -65,22 +65,38 @@ function principal(){
     }
     function keyadd(event){
         switch (event.keyCode) {
+            case 65:
+                vx = -vel;
+                vy = 0;
+                break;
             case 37:
                 vx = -vel;
                 vy = 0;
+                break;
+            case 87:
+                vx = 0;
+                vy = -vel;
                 break;
             case 38:
                 vx = 0;
                 vy = -vel;
                 break;
+            case 68: 
+                vx = vel;
+                vy = 0;
+                break;
             case 39: 
                 vx = vel;
                 vy = 0;
                 break;
-            case 40: 
+            case 83: 
                 vx = 0;
                 vy = vel;
                 break;
+            case 40: 
+                vx = 0;
+                vy = vel;
+                break;    
             default:
                 break;
         }
